@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creat Event</title>
+</head>
+<body>  
+    <p id="ans"></p>
+    <button onclick="fun_main()">Click IT!!</button>
+    <script>
+        let display = "";
+        function fun_main(){
+         //New function 
+         function fun_1(a,b){  //a=3 and b=4
+             let Addition = a+b; //ans 7
+             console.log(Addition);
+             display += `<h3>Addition of 3 and 4 is : ${Addition} </h3> `;
+            //New function
+            function fun_2(a){ //a is from Addition
+                let Subtraction = a-1;  //ans 6
+                console.log(Subtraction);
+                display += `<h3>Subtraction of Addition and 1 is : ${Subtraction} </h3> `;
+                //New function
+                function fun_3(a){ //a is from Subtraction
+                    let Multiplication = a*2; //ans 12
+                    console.log(Multiplication);
+                    display += `<h3>Multiplication of Subtraction * 2 is : ${Multiplication} </h3> `;    
+                    //New function
+                    function fun_4(a){ // a is from Multiplication 
+                        let Division = a/2; //ans 6 
+                        console.log(Division);
+                        display += `<h3>Division of Multiplication / 2 is : ${Division} </h3> `;        
+                        //New function
+                        function fun_5(a){ // a is from Division
+                            let Modulus = a % 5; //ans  1
+                            console.log(Modulus);
+                            display += `<h3>Modulus of Division % 5 is : ${Modulus} </h3> `;            
+                            //New function
+                            function fun_6(a ,b){ // a is from Addition AND b is from Subtraction
+                               let sum = Addition + Subtraction ; // 7 + 6 = 13
+                               console.log(sum);
+                               display += `<h3>Sum of ans of Addition and Subtraction is : ${sum} </h3> `;                        
+                               //New function
+                               function fun_7(a,b,c){ // a,b,c is from Addition
+                                 let cube = Addition * Addition * Addition ; // 7 * 7 * 7 =  343
+                                 console.log(cube);
+                                 display += `<h3>Cube of Addition is : ${cube} </h3> `;                    
+                                 //New function
+                                 function fun_8(a,b){ // a and b is from Subtraction 
+                                    let squre = Subtraction * Subtraction; // 6 * 6 =36
+                                    console.log(squre);
+                                    display += `<h3>Squre of Subtraction is : ${squre} </h3> `;                    
+                                    //New function
+                                    function fun_9(a,b){ // a is from squre ans b is from Addition
+                                        let total = squre + Addition ; //36+7 = 43
+                                        console.log(total);
+                                        display += `<h3>Total of Squre and Addition is : ${total} </h3> `;                        
+                                        //New function
+                                        function fun_10(){
+                                            return document.getElementById('ans').innerHTML=display;                                        
+                                        }
+                                        fun_10();
+                                    }
+                                    fun_9(squre ,Addition);
+                                 }
+                                 fun_8(Subtraction,Subtraction)
+                                }
+                                fun_7(Addition , Addition , Addition);
+                            }
+                            fun_6(Addition , Subtraction);
+                        }
+                        fun_5(Division);
+                    }
+                    fun_4(Multiplication);
+                }              
+                fun_3(Subtraction);
+            }
+            fun_2(Addition);        
+        }
+        fun_1(3,4);
+    }
+</script>
+</body>
+</html>
